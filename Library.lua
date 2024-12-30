@@ -1,21 +1,36 @@
-local InputService = game:GetService('UserInputService');
-local TextService = game:GetService('TextService');
-local CoreGui = game:GetService('CoreGui');
-local Teams = game:GetService('Teams');
-local Players = game:GetService('Players');
+-- violin-suzutsuki i love you !!!!!!
+
+local InputService = game:GetService('UserInputService')
+local TextService = game:GetService('TextService')
+local CoreGui = game:GetService('CoreGui')
+local Teams = game:GetService('Teams')
+local Players = game:GetService('Players')
 local RunService = game:GetService('RunService')
-local TweenService = game:GetService('TweenService');
-local RenderStepped = RunService.RenderStepped;
-local LocalPlayer = Players.LocalPlayer;
-local Mouse = LocalPlayer:GetMouse();
+local TweenService = game:GetService('TweenService')
+local RenderStepped = RunService.RenderStepped
+local LocalPlayer = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+local Mouse = LocalPlayer:GetMouse()
 
-local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
+local ProtectGui = protectgui or (syn and syn.protect_gui) or function() end
 
-local ScreenGui = Instance.new('ScreenGui');
-ProtectGui(ScreenGui);
+local ScreenGui = Instance.new('ScreenGui')
+ScreenGui.Name = "LinoriaGui"
+ProtectGui(ScreenGui)
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
+if gethui then
+	ScreenGui.Parent = gethui()
+elseif game.CoreGui:FindFirstChild('RobloxGui') then
+	ScreenGui.Parent = game.CoreGui:FindFirstChild('RobloxGui')
+else
+	ScreenGui.Parent = game.CoreGui
+end
 
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
-ScreenGui.Parent = CoreGui;
+local UICorner1 = Instance.new("UICorner")
+local UICorner2 = Instance.new("UICorner")
+local backgroundFrame = Instance.new("Frame")
+local tempestButton = Instance.new("TextButton")
+local UIPadding = Instance.new("UIPadding")
 
 
 
